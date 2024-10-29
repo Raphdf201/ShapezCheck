@@ -1,7 +1,7 @@
-static EMPTY: char = '-';
 static PIN: char = 'P';
 static SHAPE: char = 'S';
 static CRYSTAL: char = 'C';
+static EMPTY: char = '-';
 
 enum QuarterType {
     Empty,
@@ -12,24 +12,24 @@ enum QuarterType {
 
 fn to_char(q: QuarterType) -> char {
     if let QuarterType::Pin = q {
-        'P'
-    } else if let QuarterType::Shape = q {
-        'S'
+        PIN
     } else if let QuarterType::Crystal = q {
-        'C'
+        CRYSTAL
+    } else if let QuarterType::Empty = q {
+        EMPTY
     } else {
-        '-'
+        SHAPE
     }
 }
 
 fn to_type(c: char) -> QuarterType {
-    if c == 'P' {
+    if c == PIN {
         QuarterType::Pin
-    } else if c == 'S' {
-        QuarterType::Shape
-    } else if c == 'C' {
+    } else if c == CRYSTAL {
         QuarterType::Crystal
-    } else {
+    } else if c == EMPTY {
         QuarterType::Empty
+    } else {
+        QuarterType::Shape
     }
 }
