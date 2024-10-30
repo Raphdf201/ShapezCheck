@@ -10,6 +10,30 @@ enum QuarterType {
     Crystal,
 }
 
+impl QuarterType {
+    fn from_u8(p0: u8) -> QuarterType {
+        todo!()
+    }
+}
+
+struct Shape {
+    layer: usize,
+    quarter: usize
+}
+
+impl Shape {
+
+}
+
+fn repeat(val: i32, width: usize, count: usize) -> i32 {
+    let mut result = 0;
+    for _ in 0..count {
+        result <<= width;
+        result |= val;
+    }
+    result
+}
+
 fn to_char(q: QuarterType) -> char {
     if let QuarterType::Pin = q {
         PIN
