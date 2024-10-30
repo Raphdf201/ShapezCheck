@@ -26,7 +26,7 @@ impl Shape {
         }
     }
     fn get(&self, layer: usize, part: usize) -> QuarterType {
-        let index = layer * Self.quarter + part;
+        let index = layer * Self{quarter} + part;
         let mask = 3 << (index * 2);
         let value = (self.value & mask) >> (index * 2);
         from_u8(value as u8)
